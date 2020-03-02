@@ -8,7 +8,7 @@ interface Props {
 
 export const OpenAuthoringModalContainer = ({ previewError }: Props) => {
   const [authPopupDisplayed, setAuthPopupDisplayed] = useState(false)
-
+  const [statefulPreviewError, setStatefulPreviewError] = useState(previewError)
   const refreshPage = () => {
     fetch(`/api/reset-preview`).then(() => {
       window.location.href = '/?autoAuth'
@@ -25,6 +25,12 @@ export const OpenAuthoringModalContainer = ({ previewError }: Props) => {
   }
 
   useEffect(() => {
+    addEventListener('openAuthSaveError', e => {
+      setStatefulPreviewError(
+        "Failed to save data."
+      )
+    })
+    
     if (window.location.href.includes('autoAuth')) {
       setAuthPopupDisplayed(true)
     }
@@ -48,10 +54,10 @@ export const OpenAuthoringModalContainer = ({ previewError }: Props) => {
           ]}
         />
       )}
-      {previewError && (
+      {statefulPreviewError && (
         <ActionableModal
           title="Error"
-          message={previewError}
+          message={statefulPreviewError}
           actions={[
             {
               name: 'Continue',
