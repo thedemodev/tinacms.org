@@ -3,7 +3,6 @@ import { saveContent } from '../../open-authoring/github/api'
 import { getCachedFormData, setCachedFormData } from '../formCache'
 import { useGithubForm, GithubOptions, GitFile } from './useGithubForm'
 import { toMarkdownString } from 'next-tinacms-markdown'
-import { enterEditMode } from '../../open-authoring/authFlow'
 
 export interface Options {
   id?: string

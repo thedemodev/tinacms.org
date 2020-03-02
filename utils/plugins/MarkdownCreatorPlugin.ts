@@ -3,7 +3,6 @@ import { CMS, Field, AddContentPlugin } from 'tinacms'
 import { saveContent } from '../../open-authoring/github/api'
 import { getCachedFormData, setCachedFormData } from '../formCache'
 import { GithubOptions } from '../github/useGithubForm'
-import { enterEditMode } from '../../open-authoring/authFlow'
 
 type MaybePromise<T> = Promise<T> | T
 

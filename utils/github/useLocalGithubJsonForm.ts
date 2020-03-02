@@ -2,7 +2,6 @@ import { FormOptions, useLocalForm, usePlugins, Field } from 'tinacms'
 import { saveContent } from '../../open-authoring/github/api'
 import { getCachedFormData, setCachedFormData } from '../formCache'
 import { useGithubForm, GithubOptions, GitFile } from './useGithubForm'
-import { enterEditMode } from "../../open-authoring/authFlow"
 
 export interface Options {
   id?: string
